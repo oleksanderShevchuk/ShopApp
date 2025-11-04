@@ -1,10 +1,11 @@
-﻿using ShopApp.Domain.Entities;
+﻿using ShopApp.Application.DTOs;
+using ShopApp.Domain.Entities;
 
 namespace ShopApp.Application.Interfaces
 {
     public interface IClientRepository : IRepository<Client>
     {
         Task<IEnumerable<Client>> GetBirthdaysOnAsync(DateTime date);
-        Task<IEnumerable<(Client client, DateTime lastPurchase)>> GetClientsWithPurchasesInLastDaysAsync(int days);
+        Task<IEnumerable<ClientWithLastPurchaseDto>> GetClientsWithPurchasesInLastDaysAsync(int days);
     }
 }
