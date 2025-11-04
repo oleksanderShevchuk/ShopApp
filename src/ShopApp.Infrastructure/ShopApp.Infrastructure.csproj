@@ -1,6 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ShopApp.Application\ShopApp.Application.csproj" />
     <ProjectReference Include="..\ShopApp.Domain\ShopApp.Domain.csproj" />
   </ItemGroup>
