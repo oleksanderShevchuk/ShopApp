@@ -75,13 +75,20 @@ dotnet run
 
 The API will be available at `https://localhost:5001` (Swagger at `https://localhost:5001/swagger`)
 
-### 5. API Endpoints
+### 5.Running with Docker
+
+1. Build and run containers:
+
+```bash
+docker-compose up --build
+
+### 6. API Endpoints
 
 * `GET /api/shop/birthdays?date=YYYY-MM-DD` - List of clients with birthday on the specified date
 * `GET /api/shop/recent?days=N` - List of clients who made purchases in the last N days
 * `GET /api/shop/categories/{clientId}` - List of product categories purchased by the client with quantities
 
-### 6. Running Tests
+### 7. Running Tests
 
 ```bash
 cd tests/ShopApp.UnitTests

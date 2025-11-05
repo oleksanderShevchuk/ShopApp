@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: shopapp-sql
+    environment:
+      SA_PASSWORD: "admin"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+
+  shopapi:
+    build:
+      context: ./src/ShopApp.API
+      dockerfile: Dockerfile
+    container_name: shopapp-api
+    environment:
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=ShopDb;User Id=admin;Password=admin;"
+      DOTNET_RUNNING_IN_CONTAINER: "true"
+    depends_on:
+      - sqlserver
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+
+volumes:
+  sql_data:
