@@ -7,17 +7,14 @@ namespace ShopApp.Infrastructure.UnitOfWork
     {
         private readonly ShopDbContext _db;
         public IClientRepository Clients { get; }
-        public IProductRepository Products { get; }
         public IPurchaseRepository Purchases { get; }
 
         public UnitOfWork(ShopDbContext db,
             IClientRepository clients,
-            IProductRepository products,
             IPurchaseRepository purchases)
         {
             _db = db;
             Clients = clients;
-            Products = products;
             Purchases = purchases;
         }
 
