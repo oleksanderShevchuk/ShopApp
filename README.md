@@ -81,6 +81,7 @@ The API will be available at `https://localhost:5001` (Swagger at `https://local
 
 ```bash
 docker-compose up --build
+```
 
 ### 6. API Endpoints
 
